@@ -1,0 +1,723 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{24A86439-D1F4-45B4-BDD2-B6D7F7118C15}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>BetterFreightProgram.My.MyApplication</StartupObject>
+    <RootNamespace>BetterFreightProgram</RootNamespace>
+    <AssemblyName>BetterFreightProgram</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>BetterFreightProgram.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>BetterFreightProgram.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MetroFramework, Version=1.3.5.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.3.5.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.3.5.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmSystemLogin.Designer.vb">
+      <DependentUpon>frmSystemLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSystemLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GlobalClass\ClsRecordset.vb" />
+    <Compile Include="GlobalClass\ClsRunning.vb" />
+    <Compile Include="GlobalClass\UploadFile.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.vb">
+      <DependentUpon>Main.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddTransport.Designer.vb">
+      <DependentUpon>AddTransport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddTransport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\ApproveAdv.Designer.vb">
+      <DependentUpon>ApproveAdv.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\ApproveAdv.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\AttachSheet.Designer.vb">
+      <DependentUpon>AttachSheet.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\AttachSheet.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\BookAccount.Designer.vb">
+      <DependentUpon>BookAccount.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\BookAccount.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\BookingConfirm.Designer.vb">
+      <DependentUpon>BookingConfirm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\BookingConfirm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\Cancel.Designer.vb">
+      <DependentUpon>Cancel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Cancel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\CantCancel.Designer.vb">
+      <DependentUpon>CantCancel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\CantCancel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\ChooseTypeFirst.Designer.vb">
+      <DependentUpon>ChooseTypeFirst.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\ChooseTypeFirst.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\CostPrice.Designer.vb">
+      <DependentUpon>CostPrice.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\CostPrice.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\Debit.Designer.vb">
+      <DependentUpon>Debit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Debit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\DriverSalary.Designer.vb">
+      <DependentUpon>DriverSalary.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\DriverSalary.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\DriverSalaryNew.Designer.vb">
+      <DependentUpon>DriverSalaryNew.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\DriverSalaryNew.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\FormA.Designer.vb">
+      <DependentUpon>FormA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\FormA.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\frmAdvanceRequest.Designer.vb">
+      <DependentUpon>frmAdvanceRequest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmAdvanceRequest.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\frmContainer.Designer.vb">
+      <DependentUpon>frmContainer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmContainer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\Customer.Designer.vb">
+      <DependentUpon>Customer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Customer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\Factory.Designer.vb">
+      <DependentUpon>Factory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Factory.vb" />
+    <Compile Include="Master\frmLocation.Designer.vb">
+      <DependentUpon>frmLocation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmLocation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\frmMasAgency.Designer.vb">
+      <DependentUpon>frmMasAgency.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmMasAgency.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\frmMasBillPlace.Designer.vb">
+      <DependentUpon>frmMasBillPlace.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmMasBillPlace.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\frmMasCustomer.Designer.vb">
+      <DependentUpon>frmMasCustomer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmMasCustomer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\frmMasNotify.Designer.vb">
+      <DependentUpon>frmMasNotify.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmMasNotify.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\frmMasShipPlace.Designer.vb">
+      <DependentUpon>frmMasShipPlace.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmMasShipPlace.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\frmMasUser.Designer.vb">
+      <DependentUpon>frmMasUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmMasUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\frmMasVendor.Designer.vb">
+      <DependentUpon>frmMasVendor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmMasVendor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\frmMasVessel.Designer.vb">
+      <DependentUpon>frmMasVessel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmMasVessel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\frmPV.Designer.vb">
+      <DependentUpon>frmPV.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmPV.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\frmAccountPlan1.Designer.vb">
+      <DependentUpon>frmAccountPlan1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmAccountPlan1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\frmVesselAgent.Designer.vb">
+      <DependentUpon>frmVesselAgent.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmVesselAgent.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\frmWhtax.Designer.vb">
+      <DependentUpon>frmWhtax.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmWhtax.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\HouseAdvRequest.Designer.vb">
+      <DependentUpon>HouseAdvRequest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\HouseAdvRequest.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\HouseBL.Designer.vb">
+      <DependentUpon>HouseBL.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\HouseBL.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\Insurance.Designer.vb">
+      <DependentUpon>Insurance.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Insurance.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\Invoice.Designer.vb">
+      <DependentUpon>Invoice.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Invoice.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\MasterBL.Designer.vb">
+      <DependentUpon>MasterBL.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\MasterBL.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\PaymentVoucher.Designer.vb">
+      <DependentUpon>PaymentVoucher.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\PaymentVoucher.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\frmInv.Designer.vb">
+      <DependentUpon>frmInv.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmInv.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\PreInv.Designer.vb">
+      <DependentUpon>PreInv.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\PreInv.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\PVCancel.Designer.vb">
+      <DependentUpon>PVCancel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\PVCancel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\Quotation.Designer.vb">
+      <DependentUpon>Quotation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Quotation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\ReceiveVoucher.Designer.vb">
+      <DependentUpon>ReceiveVoucher.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\ReceiveVoucher.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\RV.Designer.vb">
+      <DependentUpon>RV.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\RV.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\SearchInvoice.Designer.vb">
+      <DependentUpon>SearchInvoice.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\SearchInvoice.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\SelectConfirmation.Designer.vb">
+      <DependentUpon>SelectConfirmation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\SelectConfirmation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\SelectInv.Designer.vb">
+      <DependentUpon>SelectInv.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\SelectInv.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\SICODE.Designer.vb">
+      <DependentUpon>SICODE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\SICODE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\SOA.Designer.vb">
+      <DependentUpon>SOA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\SOA.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\TaxInv.Designer.vb">
+      <DependentUpon>TaxInv.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\TaxInv.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\TaxInvoice.Designer.vb">
+      <DependentUpon>TaxInvoice.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\TaxInvoice.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\Truck.Designer.vb">
+      <DependentUpon>Truck.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Truck.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\Route.Designer.vb">
+      <DependentUpon>Route.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Route.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\TruckAccessories.Designer.vb">
+      <DependentUpon>TruckAccessories.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\TruckAccessories.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\UploadFilePage.Designer.vb">
+      <DependentUpon>UploadFilePage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\UploadFilePage.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\Vendor.Designer.vb">
+      <DependentUpon>Vendor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Vendor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\WHT1.Designer.vb">
+      <DependentUpon>WHT1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\WHT1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module\MdlConnect.vb" />
+    <Compile Include="Module\MdlDirecBase.vb" />
+    <Compile Include="Module\MdlMyFunction.vb" />
+    <Compile Include="Module\MdlStructure.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="PopupForm\frmSeachEngine.designer.vb">
+      <DependentUpon>frmSeachEngine.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PopupForm\frmSeachEngine.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupForm\frmSelectEngine.Designer.vb">
+      <DependentUpon>frmSelectEngine.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PopupForm\frmSelectEngine.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupForm\Frm_FindRecord.designer.vb">
+      <DependentUpon>Frm_FindRecord.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PopupForm\Frm_FindRecord.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupForm\HouseBLPop.Designer.vb">
+      <DependentUpon>HouseBLPop.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PopupForm\HouseBLPop.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupForm\MasterBLPop.Designer.vb">
+      <DependentUpon>MasterBLPop.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PopupForm\MasterBLPop.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="frmSystemLogin.resx">
+      <DependentUpon>frmSystemLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddTransport.resx">
+      <DependentUpon>AddTransport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\ApproveAdv.resx">
+      <DependentUpon>ApproveAdv.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\AttachSheet.resx">
+      <DependentUpon>AttachSheet.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\BookAccount.resx">
+      <DependentUpon>BookAccount.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\BookingConfirm.resx">
+      <DependentUpon>BookingConfirm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\Cancel.resx">
+      <DependentUpon>Cancel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\CantCancel.resx">
+      <DependentUpon>CantCancel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\ChooseTypeFirst.resx">
+      <DependentUpon>ChooseTypeFirst.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\CostPrice.resx">
+      <DependentUpon>CostPrice.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\Debit.resx">
+      <DependentUpon>Debit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\DriverSalary.resx">
+      <DependentUpon>DriverSalary.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\DriverSalaryNew.resx">
+      <DependentUpon>DriverSalaryNew.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\FormA.resx">
+      <DependentUpon>FormA.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\frmAccountPlan1.resx">
+      <DependentUpon>frmAccountPlan1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\frmAdvanceRequest.resx">
+      <DependentUpon>frmAdvanceRequest.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\frmContainer.resx">
+      <DependentUpon>frmContainer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\Customer.resx">
+      <DependentUpon>Customer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\Factory.resx">
+      <DependentUpon>Factory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\frmLocation.resx">
+      <DependentUpon>frmLocation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\frmMasAgency.resx">
+      <DependentUpon>frmMasAgency.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\frmMasBillPlace.resx">
+      <DependentUpon>frmMasBillPlace.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\frmMasCustomer.resx">
+      <DependentUpon>frmMasCustomer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\frmMasNotify.resx">
+      <DependentUpon>frmMasNotify.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\frmMasShipPlace.resx">
+      <DependentUpon>frmMasShipPlace.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\frmMasUser.resx">
+      <DependentUpon>frmMasUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\frmMasVendor.resx">
+      <DependentUpon>frmMasVendor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\frmMasVessel.resx">
+      <DependentUpon>frmMasVessel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\frmPV.resx">
+      <DependentUpon>frmPV.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\frmVesselAgent.resx">
+      <DependentUpon>frmVesselAgent.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\frmWhtax.resx">
+      <DependentUpon>frmWhtax.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\HouseAdvRequest.resx">
+      <DependentUpon>HouseAdvRequest.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\HouseBL.resx">
+      <DependentUpon>HouseBL.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\Insurance.resx">
+      <DependentUpon>Insurance.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\Invoice.resx">
+      <DependentUpon>Invoice.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\MasterBL.resx">
+      <DependentUpon>MasterBL.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\PaymentVoucher.resx">
+      <DependentUpon>PaymentVoucher.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\frmInv.resx">
+      <DependentUpon>frmInv.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\PreInv.resx">
+      <DependentUpon>PreInv.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\PVCancel.resx">
+      <DependentUpon>PVCancel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\Quotation.resx">
+      <DependentUpon>Quotation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\ReceiveVoucher.resx">
+      <DependentUpon>ReceiveVoucher.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\Route.resx">
+      <DependentUpon>Route.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\RV.resx">
+      <DependentUpon>RV.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\SearchInvoice.resx">
+      <DependentUpon>SearchInvoice.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\SelectConfirmation.resx">
+      <DependentUpon>SelectConfirmation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\SelectInv.resx">
+      <DependentUpon>SelectInv.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\SICODE.resx">
+      <DependentUpon>SICODE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\SOA.resx">
+      <DependentUpon>SOA.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\TaxInv.resx">
+      <DependentUpon>TaxInv.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\TaxInvoice.resx">
+      <DependentUpon>TaxInvoice.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\Truck.resx">
+      <DependentUpon>Truck.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\TruckAccessories.resx">
+      <DependentUpon>TruckAccessories.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\UploadFilePage.resx">
+      <DependentUpon>UploadFilePage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\Vendor.resx">
+      <DependentUpon>Vendor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\WHT1.resx">
+      <DependentUpon>WHT1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupForm\frmSeachEngine.resx">
+      <DependentUpon>frmSeachEngine.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupForm\frmSelectEngine.resx">
+      <DependentUpon>frmSelectEngine.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupForm\Frm_FindRecord.resx">
+      <DependentUpon>Frm_FindRecord.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupForm\HouseBLPop.resx">
+      <DependentUpon>HouseBLPop.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupForm\MasterBLPop.resx">
+      <DependentUpon>MasterBLPop.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
